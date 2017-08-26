@@ -1,0 +1,26 @@
+   {
+  "name": "Typenex Hyperlink-Dialer",
+
+  "version": "1.0",
+  "description": "This is a custom built extension for Typenex. This extension identifies phone numbers and allows the user to click the number to initiate a phonecall.",
+  "permissions": [
+    "tabs", "http://*/*", "https://*/*"
+  ],
+
+  "browser_action": {
+      "default_title": "Typenex Hyperlink-Dialer",
+
+      "default_icon": "icon16.png"
+  },
+
+  "content_scripts" : [
+    {
+      "matches" : ["http://*/*", "https://*/*"],
+      "js" : ["typenex_contentscript.js"],
+      "run_at" : "document_idle",
+      "all_frames" : false
+    }
+  ],
+
+  "manifest_version": 2
+}
