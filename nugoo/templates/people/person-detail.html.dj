@@ -1,8 +1,12 @@
 {% extends 'base.html.dj' %}
 
 {% block main %}
-<main class="container-fluid">
-  <div{% if person.photo %} style="background-image: url({{ person.photo.url }})"{% endif %}></div>
-  {{ person.name }}
+<main class="person container-fluid">
+  <div class="row">
+    <div class="photo col-5"{% if person.photo %} style="background-image: url({{ person.photo.url }})"{% endif %}></div>
+    <div class="col-7">
+      {{ person.name }}
+    </div>
+  </div>
 </main>
 {% endblock %}

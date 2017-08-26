@@ -107,3 +107,6 @@ class Stat(models.Model):
     value = models.SmallIntegerField(
         '능력치 값',
     )
+
+    def __str__(self):
+        return "{} : {}".format(self.person, self.name)
