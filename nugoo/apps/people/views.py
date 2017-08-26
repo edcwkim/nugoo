@@ -13,6 +13,11 @@ class PersonListByName(generic.ListView):
     context_object_name = 'people'
     template_name = 'people/person-list-by-name.html.dj'
 
+    def get(self, request, *args, **kwargs):
+        response = super().get(request, *args, **kwargs)
+        response['X-Frame-Options'] = 'ALLOWALL'
+        return response
+
     def get_queryset(self):
         return Person.objects.filter(name=self.kwargs['name'])
 
