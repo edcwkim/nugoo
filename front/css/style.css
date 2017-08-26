@@ -1,5 +1,13 @@
 span.nugoo {
-	color : red;
-	font: italic bold;
-	background-color: yellow;
+	padding: 0 !important;
+	margin: 0 !important;
+	border: none !important;
+	font: inherit !important;
+	text: inherit !important;
+	color: inherit !important;
+	background-color: transparent !important;
+  background-image: linear-gradient(to bottom, rgba(233, 253, 240, 1), rgba(233, 253, 240, 1));
+}
+span.nugoo:hover, span.nugoo:active {
+	background-image: linear-gradient(to bottom, rgba(125, 255, 179, 1), rgba(125, 255, 179, 1));
 }

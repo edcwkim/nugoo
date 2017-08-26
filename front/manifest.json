@@ -15,8 +15,8 @@
   "content_scripts" : [
     {
       "matches" : ["http://*/*", "https://*/*"],
-	  "css" : ["css/style.css", "css/jquery-ui.css"],
-      "js" : ["js/jquery-3.2.1.min.js", "js/type_contentscript.js", "js/jquery-ui.js"],
+      "css" : ["css/jquery-ui.css", "css/style.css"],
+      "js" : ["js/jquery-3.2.1.min.js", "js/jquery-ui.js", "js/type_contentscript.js"],
       "run_at" : "document_start",
       "all_frames" : true
     }

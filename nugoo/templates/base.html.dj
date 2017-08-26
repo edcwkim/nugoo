@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{% block title %}누구야 누구여{% endblock %}</title>
+    <title>{% block title %}누구여 누구야{% endblock %}</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap-reboot.min.css" integrity="sha384-+hxmo5lcrgz1rUAAhJeAix3g0ZUTzFwj3JJCzUVylkiMxmTTtWMsbeuFY4E6oO0d" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap-grid.min.css" integrity="sha384-OqsXZXm76cN7K0698q/Wshbzw13EYcf402mGTCXv5Fm7omZ7oIVdPCOK4cgh3xsh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
@@ -12,8 +12,10 @@
   </head>
   <body class="{% block body_class %}{% endblock %}">
     {% block main %}{% endblock %}
+    {% comment %}
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="{% static 'js/base.js' %}"></script>
+    {% endcomment %}
     {% block extra_body %}{% endblock %}
   </body>
 </html>
