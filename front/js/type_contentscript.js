@@ -1,16 +1,19 @@
-alert('hi');
-var word = "hello";
-var input = "";
-document.body.addEventListener('keypress',function(ev){
-    input += String.fromCharCode(ev.keyCode);
-    console.log(input);
-    if(input == word){
-        alert('typed hello');
-        input = "";
-    }
-});
+$(function() {
+  $.ajax({
+    url: "https://b31a79b7.ngrok.io/people/names/",
+    success: function(data) {
+      var names = data.data,
+          selector = "";
 
-// reset input when pressing esc
-document.body.addEventListener('keyup',function(ev){
-    if(ev.keyCode == 27) input = "";
+      for (var i = 0; i < names.length; ++i)
+        selector += ":contains('"+ names[i] + "'), ";
+      if (selector.length)
+        selector = selector.slice(0, -2);
+      console.log(selector);
+
+      $("body").contents()
+               .filter(selector)
+               .wrap("<b></b>");
+    }
+  });
 });
