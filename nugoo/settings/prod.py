@@ -8,6 +8,6 @@ SECRET_KEY = 'i6^5svhg#&&5ha2sj9hv18n3*2*bw1g$mc+#+m$h1rvczg3lz&'  # TODO: chang
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = '*'
+ALLOWED_HOSTS = '*'  # TODO: change in production
 
 WSGI_APPLICATION = 'nugoo.wsgi.application'
