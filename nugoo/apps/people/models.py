@@ -58,6 +58,15 @@ class Person(models.Model):
     def get_hashtags(self):
         return self.hashtags.order_by('?')
 
+    def get_hashtag_names(self):
+        return self.get_hashtags().values_list('name', flat=True)
+
+    def get_photo_absolute_uri(self, request):
+        if self.photo:
+            return request.build_absolute_uri(self.photo.url)
+        else:
+            return ''
+
     def get_stat(self):
         stats = self.stat_set.all()
         if stats:

@@ -25,10 +25,23 @@ class PersonListByName(generic.ListView):
 class PersonList(generic.View):
 
     def get(self, request, *args, **kwargs):
-        people = Person.objects.all()
-        if people:
-            names = people.values_list('name', flat=True).distinct()
-            people_by_name = [list(people.filter(name=name)) for name in names]
-            return JsonResponse(zip(names, people_by_name))
+        qs = Person.objects.all()
+        if qs:
+            names = qs.values_list('name', flat=True).distinct()
+            people_by_name = []
+            for name in names:
+                people = []
+                for person in qs.filter(name=name):
+                    person_values = {
+                        'hashtags': list(person.get_hashtag_names()),
+                        'photo__url': person.get_photo_absolute_uri(request),
+                    }
+                    stat = person.get_stat()
+                    if stat:
+                        person_values['stat__name'] = stat.name
+                        person_values['stat__value'] = stat.value
+                    people.append(person_values)
+                people_by_name.append(people)
+            return JsonResponse(dict(zip(names, people_by_name)))
         else:
             raise Http404
