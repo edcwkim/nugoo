@@ -19,6 +19,7 @@ class PersonListByName(generic.ListView):
 
 class PersonListName(generic.ListView):
     model = Person
+    allow_empty = False
 
     def get(self, request, *args, **kwargs):
         names = self.get_queryset().values_list('name', flat=True)
