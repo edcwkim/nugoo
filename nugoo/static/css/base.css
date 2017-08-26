@@ -40,11 +40,11 @@ main.person .stats .stat-name-container {
   position: absolute;
   top: 6vh;
   left: 3vw;
-  font-size: 27px;
 }
 main.person .stats .stat-name {
   display: inline-block;
   padding: 3px 6px 4px;
+  font-size: 20px;
   font-weight: 500;
   color: #fff;
   background-color: #00e3ae;
@@ -54,7 +54,7 @@ main.person .stats .stat-value {
   top: 20vh;
   right: 3vw;
   width: calc(100% - 3vw);
-  font-size: 42px;
+  font-size: 32px;
   text-align: right;
 }
 main.person .stats .hashtag-container {
@@ -62,7 +62,7 @@ main.person .stats .hashtag-container {
   top: 42.5vh;
   left: 3vw;
   width: calc(100% - 6vw);
-  font-size: 21px;
+  font-size: 16px;
   line-height: 25px;
 }
 main.person .stats .hashtag {
