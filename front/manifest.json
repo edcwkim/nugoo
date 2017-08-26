@@ -1,7 +1,7 @@
 {
     "name": "PGHACK NUGOO",
     "version": "1.0",
-    "description": "This is a custom built extension for allowing users to get the information about certain peaple",
+    "description": "This is a custom built extension for allowing users to get the information about certain people",
     "permissions": [
     "tabs", "http://*/*", "https://*/*"
     ],
