@@ -1,5 +1,6 @@
 import uuid
 from django.db import models
+from django.urls import reverse
 
 
 class Hashtag(models.Model):
@@ -38,8 +39,14 @@ class Person(models.Model):
         blank=True,
     )
 
+    class Meta:
+        verbose_name_plural = 'people'
+
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('people:person-detail', args=[self.pk])
 
 
 class PersonToEvent(models.Model):

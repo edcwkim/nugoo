@@ -1,0 +1,8 @@
+{% extends 'base.html.dj' %}
+
+{% block main %}
+<main class="container-fluid">
+  <div{% if person.photo %} style="background-image: url({{ person.photo.url }})"{% endif %}></div>
+  {{ person.name }}
+</main>
+{% endblock %}

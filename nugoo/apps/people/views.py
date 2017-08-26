@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views import generic
+from .models import Person
 
-# Create your views here.
+
+class PersonDetail(generic.DetailView):
+    model = Person
+    context_object_name = 'person'
+    template_name = 'people/person-detail.html.dj'

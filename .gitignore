@@ -101,5 +101,7 @@ ENV/
 .mypy_cache/
 
 # Project specific
+/static/
+/media/
 prod.py
 db.sqlite3
