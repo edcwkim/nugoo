@@ -5,12 +5,12 @@ span.nugoo {
 	border: none !important;
 	font: inherit !important;
 	text: inherit !important;
-	color: rgba(0, 0, 0, 0.8) !important;
-	background-color: transparent !important;
-  background-image: linear-gradient(to bottom, rgba(233, 253, 240, 1), rgba(233, 253, 240, 1));
+	color: inherit !important;
+	background: inherit !important;
 	cursor: pointer;
 }
 span.nugoo:hover, span.nugoo:active {
+	background-color: transparent !important;
 	background-image: linear-gradient(to bottom, rgba(125, 255, 179, 1), rgba(125, 255, 179, 1));
 }
 .ui-tooltip {
