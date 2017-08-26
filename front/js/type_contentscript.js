@@ -1,6 +1,6 @@
 $(function() {
   $.ajax({
-      url="https://nugoo.me/people/names";
+      url:"https://nugoo.me/people/names",
       success: function(data) {
           var names = data.data,
               selector = "";
