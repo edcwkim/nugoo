@@ -10,17 +10,17 @@
       "default_title": "PGHACK",
       "default_icon": "images/nugoo16.png"
     },
-    
-	"icons" : {
-		"128": "images/nugoo128.png",
-		"48": "images/nugoo48.png",
-		"16": "images/nugoo16.png"
-	},
-    
+
+    "icons" : {
+      "128": "images/nugoo128.png",
+      "48": "images/nugoo48.png",
+      "16": "images/nugoo16.png"
+    },
+
     "content_scripts" : [
     {
       "matches" : ["http://*/*", "https://*/*"],
-      "css" : ["css/jquery-ui.css", "css/style.css"],
+      "css" : ["css/style.css"],
       "js" : ["js/jquery-3.2.1.min.js", "js/jquery-ui.js", "js/type_contentscript.js"],
       "run_at" : "document_start",
       "all_frames" : true

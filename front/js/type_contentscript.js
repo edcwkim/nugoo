@@ -17,8 +17,9 @@ $(function() {
         });
 
         $(".nugoo-" + i).tooltip({
-          items : ".nugoo-" + i,
-          content : '<iframe src="https://nugoo.me/p/' + names[i] + '/" width="400" height="224" style="border: none;"></iframe>'
+          items: ".nugoo-" + i,
+          content: '<iframe src="https://nugoo.me/p/' + names[i] + '/" width="400" height="224" style="border: none;"></iframe>',
+          classes: {"ui-tooltip": "nugoo-tooltip"}
         });
       }
     }

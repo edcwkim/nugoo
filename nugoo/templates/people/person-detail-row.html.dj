@@ -1,6 +1,17 @@
+{% load humanize %}
 <div class="row">
   <div class="photo col-5"{% if person.photo %} style="background-image: url({{ person.photo.url }})"{% endif %}></div>
-  <div class="col-7">
-    {{ person.name }}
+  <div class="stats col-7">
+    {% with stat=person.get_stat %}
+    <div class="stat-name-container">
+      <span class="stat-name">{{ stat.name }}</span>
+    </div>
+    <div class="stat-value">{{ stat.value|intcomma }}</div>
+    {% endwith %}
+    <div class="hashtag-container">
+      {% for hashtag in person.get_hashtags %}
+      <a href="{# TODO #}" class="hashtag">#{{ hashtag.name }}</a>
+      {% endfor %}
+    </div>
   </div>
 </div>

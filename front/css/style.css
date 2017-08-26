@@ -13,3 +13,11 @@ span.nugoo {
 span.nugoo:hover, span.nugoo:active {
 	background-image: linear-gradient(to bottom, rgba(125, 255, 179, 1), rgba(125, 255, 179, 1));
 }
+.ui-tooltip {
+	position: absolute;
+	z-index: 9999;
+}
+.nugoo-tooltip {
+	border-radius: 8px;
+	opacity: 0.8;
+}

@@ -1,3 +1,4 @@
+import random
 import uuid
 from django.db import models
 from django.urls import reverse
@@ -25,6 +26,12 @@ class Person(models.Model):
         verbose_name='사건들',
         blank=True,
     )
+    hashtags = models.ManyToManyField(
+        Hashtag,
+        related_name='person_set',
+        verbose_name='해시태그',
+        blank=True,
+    )
 
     def get_photo_upload_to(self, filename):
         return "{}/{}/{}.{}".format(
@@ -48,6 +55,17 @@ class Person(models.Model):
     def get_absolute_url(self):
         return reverse('people:person-detail', args=[self.pk])
 
+    def get_hashtags(self):
+        return self.hashtags.order_by('?')
+
+    def get_stat(self):
+        stats = self.stat_set.all()
+        if stats:
+            index = random.randrange(len(stats))
+            return stats[index]
+        else:
+            return None
+
 
 class PersonToEvent(models.Model):
     person = models.ForeignKey(
@@ -65,12 +83,6 @@ class PersonToEvent(models.Model):
         verbose_name='사건',
         blank=True,
         null=True,
-    )
-    hashtags = models.ManyToManyField(
-        Hashtag,
-        related_name='person_to_event_set',
-        verbose_name='해시태그',
-        blank=True,
     )
 
     def __str__(self):

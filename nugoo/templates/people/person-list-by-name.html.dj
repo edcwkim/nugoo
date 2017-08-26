@@ -1,5 +1,7 @@
 {% extends 'base.html.dj' %}
 
+{% block body_class %}person iframe{% endblock %}
+
 {% block main %}
 <main class="person container-fluid">
   {% for person in people %}

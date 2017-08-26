@@ -1,6 +1,71 @@
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+}
+
+body.person.iframe {
+  background: none;
+}
 main.person .photo {
   height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+main.person .stats {
+  height: 100vh;
+}
+body.person.iframe main.person .stats {
+  background-color: #fff;
+  opacity: 0.8;
+}
+main.person .stats .stat-name-container {
+  position: absolute;
+  top: 6vh;
+  left: 3vw;
+  font-size: 27px;
+}
+main.person .stats .stat-name {
+  display: inline-block;
+  padding: 3px 6px 4px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #00e3ae;
+}
+main.person .stats .stat-value {
+  position: absolute;
+  top: 20vh;
+  right: 3vw;
+  width: calc(100% - 3vw);
+  font-size: 42px;
+  text-align: right;
+}
+main.person .stats .hashtag-container {
+  position: absolute;
+  top: 42.5vh;
+  left: 3vw;
+  width: calc(100% - 6vw);
+  font-size: 21px;
+  line-height: 25px;
+}
+main.person .stats .hashtag {
+  text-decoration: underline;
+  color: #7c7c7c;
 }
