@@ -19,6 +19,8 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
+    'nugoo.apps.people',
+
     'debug_toolbar',
 
     'django.contrib.admin',
