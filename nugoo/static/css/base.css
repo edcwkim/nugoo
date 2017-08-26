@@ -43,7 +43,7 @@ main.person .stats .stat-name-container {
 }
 main.person .stats .stat-name {
   display: inline-block;
-  padding: 3px 6px 4px;
+  padding: 2px 6px;
   font-size: 20px;
   font-weight: 500;
   color: #fff;
