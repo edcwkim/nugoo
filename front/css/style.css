@@ -18,5 +18,6 @@ span.nugoo:hover, span.nugoo:active {
 	z-index: 9999;
 }
 .nugoo-tooltip {
+	overflow: hidden;
 	border-radius: 8px;
 }
