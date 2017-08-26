@@ -1,4 +1,4 @@
-from django.http import Http404, JsonResponse
+from django.http import JsonResponse
 from django.views import generic
 from .models import Person
 
@@ -22,13 +22,12 @@ class PersonListByName(generic.ListView):
         return Person.objects.filter(name=self.kwargs['name'])
 
 
-class PersonList(generic.View):
+class PersonListName(generic.ListView):
+    model = Person
+    allow_empty = False
 
     def get(self, request, *args, **kwargs):
-        people = Person.objects.all()
-        if people:
-            names = people.values_list('name', flat=True).distinct()
-            people_by_name = [list(people.filter(name=name)) for name in names]
-            return JsonResponse(zip(names, people_by_name))
-        else:
-            raise Http404
+        names = self.get_queryset().values_list('name', flat=True)
+        return JsonResponse({
+            'data': list(names),
+        })
