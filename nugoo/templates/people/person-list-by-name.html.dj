@@ -1,0 +1,9 @@
+{% extends 'base.html.dj' %}
+
+{% block main %}
+<main class="person container-fluid">
+  {% for person in people %}
+  {% include 'people/person-detail-row.html.dj' with person=person %}
+  {% endfor %}
+</main>
+{% endblock %}

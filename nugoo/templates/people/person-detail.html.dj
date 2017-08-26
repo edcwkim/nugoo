@@ -2,11 +2,6 @@
 
 {% block main %}
 <main class="person container-fluid">
-  <div class="row">
-    <div class="photo col-5"{% if person.photo %} style="background-image: url({{ person.photo.url }})"{% endif %}></div>
-    <div class="col-7">
-      {{ person.name }}
-    </div>
-  </div>
+  {% include 'people/person-detail-row.html.dj' %}
 </main>
 {% endblock %}
