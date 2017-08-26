@@ -3,6 +3,7 @@ $(function() {
     url: "https://nugoo.me/people/names/",
     success: function(data) {
       var names = data.data;
+      var flag = 0;
 
       // highlight all the names in names
       for (var i = 0; i < names.length; ++i) {
@@ -15,12 +16,45 @@ $(function() {
             return oldHtml.replace(regexp, "$1" + span);
           });
         });
+        
+        console.log("Start flag :" + flag);
+        
+        var nugooclass = ".nugoo-"+i;
+        var $elem = $(nugooclass);
 
         $(".nugoo-" + i).tooltip({
           items: ".nugoo-" + i,
           content: '<iframe src="https://nugoo.me/p/' + names[i] + '/" width="400" height="224" style="border: none;"></iframe>',
           classes: {"ui-tooltip": "nugoo-tooltip"}
         });
+        
+        $elem.on("mouseenter", function (e) {
+            console.log("Before : " + flag);
+            if (flag == 0) {
+                e.stopImmediatePropagation();
+                $(this).tooltip("open");
+                flag = 1
+                console.log("After : " + flag);
+            } else {
+                $(this).tooltip("disable");
+            }
+        });
+        
+        $elem.on("mouseleave", function (e) {
+            e.stopImmediatePropagation();
+        });
+        
+        $(document).mouseup(function (e) {
+            var container = $(".ui-tooltip");
+            if (! container.is(e.target) && 
+                container.has(e.target).length === 0)
+            {
+                $elem.tooltip("close");
+                flag = 0;
+                console.log("Now : " + flag);
+            }
+        });
+        
       }
     }
   });
