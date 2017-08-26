@@ -7,7 +7,7 @@ from django.urls import reverse
 class Hashtag(models.Model):
     name = models.CharField(
         '이름',
-        max_length=10,
+        max_length=20,
     )
 
     def __str__(self):
