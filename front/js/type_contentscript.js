@@ -5,7 +5,6 @@ $(function() {
           var names = data.data,
               selector = "";
           var flag = 0;
-          console.log(names);
           
           // highlight all the names in names
           for (var i = 0; i < names.length; ++i) {
@@ -32,13 +31,11 @@ $(function() {
           
           $(headers).each(function(index) {
             $(this).on("mouseenter", function (e) {
-                console.log("Before : " + flag);
                 if (flag == 0) {
                     e.stopImmediatePropagation();
                     $(this).tooltip("enable");
                     $(this).tooltip("open");
                     flag = 1
-                    console.log("After : " + flag);
                 } else {
                     $(this).tooltip("disable");
                 }
@@ -57,7 +54,6 @@ $(function() {
               {
                   $(".nugoo").tooltip("disable");
                   flag = 0;
-                  console.log("Now : " + flag);
               }
           });
       }
