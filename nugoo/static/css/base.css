@@ -34,7 +34,7 @@ main.person .stats {
 }
 body.person.iframe main.person .stats {
   background-color: #fff;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 main.person .stats .stat-name-container {
   position: absolute;

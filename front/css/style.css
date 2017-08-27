@@ -13,11 +13,14 @@ span.nugoo:hover, span.nugoo:active {
 	background-color: transparent !important;
 	background-image: linear-gradient(to bottom, rgba(125, 255, 179, 1), rgba(125, 255, 179, 1));
 }
-.ui-tooltip {
-	position: absolute;
-	z-index: 9999;
-}
-.nugoo-tooltip {
-	overflow: hidden;
+.ui-tooltip.nugoo-tooltip {
+	max-width: none;
+	padding: 0;
+	border: none;
 	border-radius: 8px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+}
+.ui-tooltip.nugoo-tooltip iframe {
+	display: block;
 }
