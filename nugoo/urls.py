@@ -18,8 +18,9 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
+    url(r'^', include('nugoo.apps.core.urls', namespace='core')),
     url(r'^', include('nugoo.apps.people.urls', namespace='people')),
-    url(r'^', admin.site.urls),
+    url(r'^django-admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:

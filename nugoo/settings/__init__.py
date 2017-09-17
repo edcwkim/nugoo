@@ -20,6 +20,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 
 INSTALLED_APPS = [
     'nugoo.apps.people',
+    'nugoo.apps.core',
 
     'debug_toolbar',
 
