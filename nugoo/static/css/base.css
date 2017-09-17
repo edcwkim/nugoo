@@ -140,14 +140,18 @@ main.home .showcase .iframe-container {
 main.home .showcase .iframe-container > .row {
   display: inline-flex;
   width: 400px;
-  max-width: calc(100% - 60px);
+  max-width: calc(100% - 80px);
   height: 224px;
-  margin: 30px;
+  margin: 36px 40px;
   border-radius: 8px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 @media (orientation: portrait) {
+  main.home .showcase .iframe-container > .row {
+    max-width: calc(100% - 60px);
+    margin: 30px;
+  }
   main.home .showcase .iframe-container > .row:last-child {
     display: none;
   }
