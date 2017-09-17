@@ -1,3 +1,4 @@
+/*
 span.nugoo {
 	display: inline !important;
 	padding: 0 !important;
@@ -9,10 +10,25 @@ span.nugoo {
 	background: inherit !important;
 	cursor: pointer;
 }
+*/
+
 span.nugoo:hover, span.nugoo:active {
 	background-color: transparent !important;
 	background-image: linear-gradient(to bottom, rgba(125, 255, 179, 1), rgba(125, 255, 179, 1));
 }
+
+span.nugoo{
+   content: '';
+   display: inline-block;
+   width: 4px;
+   height: 4px;
+   border-radius: 50%;
+   background-color: #47E189;
+   position: relative;
+   top: -9px;
+   left: 1px;
+}
+
 .ui-tooltip.nugoo-tooltip {
 	max-width: none;
 	padding: 0;
