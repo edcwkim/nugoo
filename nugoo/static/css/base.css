@@ -14,10 +14,161 @@
        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),
        url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');
 }
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 700;
+  src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),
+       url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),
+       url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');
+}
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 400;
+}
+body b,
+body h1 {
+  font-weight: 700;
+}
+
+main.home > .row {
+  min-height: 100vh;
+}
+main.home .hero {
+  padding-top: 25vh;
+  padding-bottom: 15vh;
+  text-align: center;
+  color: #fff;
+  background-image: url(/static/img/hero.jpg);
+  background-size: cover;
+  background-position: center;
+}
+main.home .hero .logo {
+  height: 20vh;
+  max-height: 20vw;
+  margin-bottom: 5vh;
+}
+main.home .hero h1 {
+  margin-bottom: 10vh;
+  font-size: 54px;
+  letter-spacing: -0.04em;
+}
+main.home .hero .available {
+  display: inline-block;
+  padding: 7px 8px 6px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14),0 1px 18px 0 rgba(0,0,0,0.12),0 3px 5px -1px rgba(0,0,0,0.3);
+  transition: box-shadow 250ms ease;
+}
+main.home .hero .available:hover,
+main.home .hero .available:focus {
+  box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14),0 6px 30px 5px rgba(0,0,0,0.12),0 8px 10px -5px rgba(0,0,0,0.3);
+}
+main.home .hero .available .chrome {
+  width: 36px;
+  margin-right: 7px;
+  vertical-align: -1px;
+}
+main.home .hero .available .text-wrapper {
+  display: inline-block;
+}
+main.home .hero .available .text {
+  font-size: 18px;
+  line-height: 1.25;
+  text-align: left;
+  color: #fff;
+}
+main.home .hero .available .text:first-of-type {
+  font-size: 15px;
+}
+@media (orientation: portrait) {
+  main.home .hero h1 {
+    font-size: 42px;
+  }
+  main.home .hero .available {
+    padding: 5px 6px 4px;
+    border-radius: 3px;
+  }
+  main.home .hero .available .chrome {
+    width: 24px;
+    margin-right: 5px;
+    vertical-align: 1px;
+  }
+  main.home .hero .available .text {
+    font-size: 14px;
+  }
+  main.home .hero .available .text:first-of-type {
+    font-size: 12px;
+  }
+}
+main.home .about {
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  text-align: center;
+  color: #fff;
+  background-color: #aedcff;
+}
+main.home .about h1 {
+  font-size: 42px;
+  line-height: 1.25;
+  margin-bottom: 10vh;
+}
+main.home .about p {
+  font-size: 21px;
+  line-height: 1.75;
+  text-align: left;
+}
+@media (orientation: portrait) {
+  main.home .about h1 {
+    font-size: 30px;
+  }
+  main.home .about p {
+    font-size: 15px;
+  }
+}
+main.home .showcase {
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  background-color: #e55;
+}
+main.home .showcase .iframe-container {
+  width: 100%;
+  text-align: center;
+}
+main.home .showcase .iframe-container > .row {
+  display: inline-flex;
+  width: 400px;
+  max-width: calc(100% - 60px);
+  height: 224px;
+  margin: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+@media (orientation: portrait) {
+  main.home .showcase .iframe-container > .row:last-child {
+    display: none;
+  }
+}
+main.home.person .photo, main.home.person .stats {
+  height: 100%;
+}
+main.home.person .stats .stat-name-container {
+  top: 14px;
+  left: 12px;
+}
+main.home.person .stats .stat-value {
+  top: 44px;
+  right: 12px;
+  width: 212px;
+}
+main.home.person .stats .hashtag-container {
+  top: 96px;
+  left: 12px;
+  width: 200px;
+  text-align: left;
 }
 
 body.person.iframe {
@@ -68,4 +219,12 @@ main.person .stats .hashtag-container {
 main.person .stats .hashtag {
   text-decoration: underline;
   color: #7c7c7c;
+}
+
+.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
+@media (orientation: portrait) {
+  .github-corner svg {
+    transform: scale(0.75);
+    transform-origin: top right;
+  }
 }
